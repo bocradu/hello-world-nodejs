@@ -19,7 +19,8 @@ services:
       - blue-green
 
   blue:
-    image: radu/helloworld:1
+    build: .
+    image: radu/helloworld:3
     container_name: blue
     ports:
       - "80"
