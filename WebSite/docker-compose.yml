@@ -20,7 +20,7 @@ services:
 
   blue:
     build: .
-    image: radu/helloworld:3
+    image: radu/helloworld:${TAG}
     container_name: blue
     ports:
       - "80"
@@ -30,7 +30,8 @@ services:
       - blue-green
 
   green:
-    image: radu/helloworld:2
+    build: .
+    image: radu/helloworld:${TAG}
     container_name: green    
     ports:
       - "80"
