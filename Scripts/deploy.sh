@@ -6,10 +6,10 @@ if [ $liveVersion == "blue" ]; then
 else
 	docker-compose -f ../$2/docker-compose.yml up -d blue
 fi
-if [ $(docker inspect -f {{.State.Running}} blue) != true ]; then
+if [! "$(docker ps -q -f name=blue)" ]; then
 	docker-compose -f ../$2/docker-compose.yml up -d blue
 fi
-if [ $(docker inspect -f {{.State.Running}} green) != true ]; then
+if [ ! "$(docker ps -q -f name=green)" ]; then
 	docker-compose -f ../$2/docker-compose.yml up -d green
 fi
 
