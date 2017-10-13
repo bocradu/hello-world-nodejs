@@ -8,7 +8,6 @@ services:
       - "80:80"
       - "8080:8080"
     environment:
-      - CONSUL_URL=consul:8500
       - BLUE_NAME=blue
       - GREEN_NAME=green
       - LIVE=blue
